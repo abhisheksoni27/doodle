@@ -108,13 +108,17 @@ a:hover {
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none;
   line-height: 0;
+  opacity:1;
   background-color: #f9f9f9;
   text-align: center;
+  transition: opacity ease-out;  
 }
 
 .box {
   box-sizing: border-box;
   display: inline-block;
+  height: 100px;
+  width:100px;
   background-color: #f9f9f9;
   transition: background-color ease-out;
   -webkit-transition: background-color ease-out;
@@ -216,5 +220,10 @@ button {
 @media (max-width: 600px) {
   button {
     width: 7.5vw;
+  }
+
+  box{
+    width:25px;
+    height:25px;
   }
 }

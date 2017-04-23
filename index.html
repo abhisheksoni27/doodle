@@ -7,7 +7,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">-->
     <link rel="manifest" href="./manifest.json">
     <meta name="theme-color" content="#E91E63">
     <link rel="shortcut icon" href="./images/favicon.ico">
@@ -27,18 +27,18 @@
     <meta name="msapplication-tap-highlight" content="no">
 
     <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/doodle/sw.js', {scope: '/doodle/'}).then(_ => {
-          console.log('service worker is cool 🐳');
-        }).catch(e => {
-          console.error('service worker is not so cool 🔥', e);
-          throw e;
-        });
-      }
+      // if ('serviceWorker' in navigator) {
+      //   navigator.serviceWorker.register('/doodle/sw.js', {scope: '/doodle/'}).then(_ => {
+      //     console.log('service worker is cool 🐳');
+      //   }).catch(e => {
+      //     console.error('service worker is not so cool 🔥', e);
+      //     throw e;
+      //   });
+      // }
     </script>
   </head>
   <body>
-    <div class="horizontal" style="margin-top: 10px;" id="topSection">
+    <div class="horizontal" style="margin-top: 10px;" id="topSection" hidden>
       <div id="colorsContainer"></div>
       <span id="buttonsContainer">
         <button id="buttonSettings">
@@ -50,7 +50,7 @@
       </span>
     </div>
 
-    <div class="preamble">
+    <div class="preamble" hidden>
       <div id="what" class="preamble-text" hidden>
         There's this thing called a Buddha board, which is a weird surface you paint on
         with water. As time passes, the water evaporates and your doodle
@@ -68,7 +68,7 @@
           </div>
           <div class="slider-wrapper">
             <span class="slider-title">size (<span id="pixelSizeDisplay" class="slider-value">16px</span>)</span>
-            <input id="pixelSize" type="range" min="11" max="90" step="1" value="16">
+            <input id="pixelSize" type="range" min="11" max="200" step="1" value="16">
           </div>
           <div class="slider-wrapper">
             <span class="slider-title">colour loop (<span id="cycleDisplay" class="slider-value">0s</span>)</span>
